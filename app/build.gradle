@@ -1,0 +1,96 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+def androidInfo = rootProject.ext.android
+def support = rootProject.ext.dependencies
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+        arg("AROUTER_GENERATE_DOC", "enable")
+    }
+}
+
+android {
+    compileSdkVersion androidInfo.compileSdkVersion
+    buildToolsVersion androidInfo.buildToolsVersion
+
+    defaultConfig {
+        applicationId androidInfo.applicationId
+        minSdkVersion androidInfo.minSdkVersion
+        targetSdkVersion androidInfo.targetSdkVersion
+        versionCode androidInfo.versionCode
+        versionName androidInfo.versionName
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+
+        resValue "string", "app_name", rootProject.ext.android["appName"]
+        manifestPlaceholders = rootProject.ext.manifestPlaceholders
+        multiDexEnabled = true
+        ndk {
+            abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            v1SigningEnabled true
+            v2SigningEnabled true
+
+            storeFile file(androidInfo.storeFile)
+            //签名密码
+            storePassword androidInfo.storePassword
+            //别名
+            keyAlias androidInfo.keyAlias
+            //别名密码
+            keyPassword androidInfo.keyPassword
+        }
+
+        debug {
+            storeFile file(androidInfo.storeFile)
+            //签名密码
+            storePassword androidInfo.storePassword
+            //别名
+            keyAlias androidInfo.keyAlias
+            //别名密码
+            keyPassword androidInfo.keyPassword
+        }
+    }
+
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "4g"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+
+    androidXTest.each { k, v -> api v }
+    androidx.each { k, v -> api v }
+    kotlins.each { k, v -> api v }
+    lifecycle.each { k, v -> api v }
+
+    support.each { k, v -> api v }
+
+    implementation project(path: ':configure')
+}

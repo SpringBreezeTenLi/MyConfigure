@@ -1,0 +1,135 @@
+ext {
+
+    //是否为组件化开发
+    isModule = true
+
+    //applicationId版本号sdkVersion统一管理
+    //华鼎云仓系统（店仓） versionCode：2  versionName：1.1  applicationId：com.huading.wmstore  appName：华鼎云仓系统
+    //华鼎云网仓系统（中心仓） versionCode：12  versionName：1.2.0  applicationId：com.huading.wms  appName：华鼎云网仓系统
+    android = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.3",
+            minSdkVersion    : 14,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : "1.0",
+            applicationId    : "com.huading.myconfigure",
+            appName          : "MyConfigure",
+
+            storeFile        : "./jks/baohuoduankey.jks",
+            storePassword    : "123456",
+            keyAlias         : "key0",
+            keyPassword      : "123456",
+    ]
+
+    //参数配置
+    manifestPlaceholders = [
+            //UMENGAppKey
+            UMAppKey         : "61c443fae014255fcbc6f4bb",
+            UMAppKeyIsCenter : "61c444b9e0f9bb492ba8a5aa",
+            UMAppName        : "华鼎云仓系统-Android",
+            UMAppNameIsCenter: "华鼎云仓网系统-Android",
+            //网络地址
+            //网络测试环境:http://173.16.200.99:1509/   开发环境:http://173.16.200.93:1509/   生产环境:https://wms.huadingyun.cn/api/
+            serverHost       : "https://wms.huadingyun.cn/api/",
+            serverDebugHost  : "https://wms.huadingyun.cn/api/",
+            isCenter         : true,
+
+
+    ]
+
+    versions = [
+            appcompatVersion : "1.2.0",
+            constraintlayout : "2.0.4",
+            materialVersion  : "1.2.1",
+            corektx          : "1.3.2",
+            kotlinVersion    : "1.4.10",
+            coroutinesVersion: "1.3.3",
+    ]
+
+    androidXTest = [
+            "junit"                               : "junit:junit:4.12",
+            "androidx.test.ext_junit"             : "androidx.test.ext:junit:1.1.2",
+            "androidx.test.espresso:espresso_core": "androidx.test.espresso:espresso-core:3.3.0",
+    ]
+
+    kotlins = [
+            "corektx"                   : "androidx.core:core-ktx:${versions["corektx"]}",
+            "kotlinx-coroutines-core"   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions["coroutinesVersion"]}",
+            "kotlinx-coroutines-android": "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions["coroutinesVersion"]}",
+            "kotlin-stdlib"             : 'org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version',
+    ]
+
+    androidx = [
+            "appcompat"       : "androidx.appcompat:appcompat:${versions["appcompatVersion"]}",
+            "constraintlayout": "androidx.constraintlayout:constraintlayout:${versions["constraintlayout"]}",
+            "material"        : "com.google.android.material:material:${versions["materialVersion"]}",
+            "lifecycle"       : "androidx.lifecycle:lifecycle-extensions:2.1.0",
+    ]
+
+    lifecycle = [
+            "viewmodel" : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0",
+            "extensions": "androidx.lifecycle:lifecycle-extensions:2.2.0",
+
+            "livedata"  : "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0",
+    ]
+
+    material = [
+            "cardview": "androidx.cardview:cardview:1.0.0",
+            "design"  : "com.android.support:design:26.1.0",
+            "material": "com.google.android.material:material:1.2.1"
+    ]
+
+    dependencies = [
+
+            "multidex"           : 'com.android.support:multidex:1.0.1',
+            "arouter_api"        : "com.alibaba:arouter-api:1.5.1",
+            "arouter_compiler"   : "com.alibaba:arouter-compiler:1.2.2",
+
+            "immersionbar"       : "com.gyf.immersionbar:immersionbar:3.0.0",//状态栏
+            "immersionbar-koltin": "com.gyf.immersionbar:immersionbar-ktx:3.0.0",//状态栏
+
+            "agentweb"           : "com.just.agentweb:agentweb:4.1.3",       //web
+            "loadsir"            : "com.kingja.loadsir:loadsir:1.3.6",
+
+            "autosize"           : "me.jessyan:autosize:0.9.5",
+
+            "recyclerview"       : "androidx.recyclerview:recyclerview:1.1.0",
+            "adapter"            : "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",
+
+            "refresh"            : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0",
+            "refreshHeader"      : "com.scwang.smartrefresh:SmartRefreshHeader:1.1.0",
+
+            "glide"              : "com.github.bumptech.glide:glide:4.11.0",
+            "transformations"    : "jp.wasabeef:glide-transformations:2.0.1",
+
+            "utilcode"           : "com.blankj:utilcode:1.30.1",
+
+            "roundedimageview"   : 'com.makeramen:roundedimageview:2.3.0',
+            "magicIndicator"     : 'com.github.hackware1993:MagicIndicator:1.5.0',
+            "span"               : 'me.gujun.android:span:1.7',
+
+            "permissions"        : 'com.github.tbruyelle:rxpermissions:0.10.2',
+
+            "rxbus"              : 'com.hwangjr.rxbus:rxbus:1.0.6',
+            "rxjava"             : 'io.reactivex.rxjava2:rxjava:2.2.8',
+            "rxandroid"          : 'io.reactivex.rxjava2:rxandroid:2.1.1',
+            "retrofit"           : 'com.squareup.retrofit2:retrofit:2.5.0',
+            "gson"               : 'com.squareup.retrofit2:converter-gson:2.5.0',
+            "adapter-rxjava2"    : 'com.squareup.retrofit2:adapter-rxjava2:2.5.0',
+            "converter-scalars"  : 'com.squareup.retrofit2:converter-scalars:2.5.0',
+            "logging-interceptor": 'com.squareup.okhttp3:logging-interceptor:3.12.1',
+
+            "pickerView"         : 'com.contrarywind:Android-PickerView:3.2.6',
+            "badgeview"          : 'q.rorbin:badgeview:1.1.3',
+
+            "XPopupExt"          : 'com.github.li-xiaojun:XPopupExt:0.0.7',
+            "XPopup"             : 'com.github.li-xiaojun:XPopup:2.5.3',
+            "permissionx"        : 'com.permissionx.guolindev:permissionx:1.4.0',
+
+            "umsdk-common"       : 'com.umeng.umsdk:common:9.4.4',
+            "umsdk-asms"         : 'com.umeng.umsdk:asms:1.4.1',
+            "umsdk-apm"          : 'com.umeng.umsdk:apm:1.5.2',
+    ]
+
+}
