@@ -8,4 +8,105 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- BulletinView -->
+    <declare-styleable name="BulletinView">
+        <attr name="bulletinInterval" format="integer" />
+        <attr name="bulletinEnterAnim" format="reference" />
+        <attr name="bulletinLeaveAnim" format="reference" />
+    </declare-styleable>
+
+    <!-- MyTextView -->
+    <declare-styleable name="MyTextView">
+        <attr name="tv_width" format="dimension" />
+        <attr name="tv_height" format="dimension" />
+    </declare-styleable>
+
+    <!-- MyRadioButton -->
+    <declare-styleable name="MyRadioButton">
+        <attr name="rb_width" format="dimension" />
+        <attr name="rb_height" format="dimension" />
+    </declare-styleable>
+
+    <!-- RatioImageView -->
+    <declare-styleable name="RatioImageView">
+        <!--宽度是否根据src图片的比例来测量（高度已知）-->
+        <attr name="is_width_fix_drawable_size_ratio" format="boolean" />
+        <!--高度是否根据src图片的比例来测量（宽度已知）-->
+        <attr name="is_height_fix_drawable_size_ratio" format="boolean" />
+
+        <!-- 高度设置，参考宽度，如0.5 , 表示 高度＝宽度×０.5 -->
+        <attr name="height_to_width_ratio" format="float" />
+        <!-- 宽度设置，参考高度，如0.5 , 表示 宽度＝高度×０.5 -->
+        <attr name="width_to_height_ratio" format="float" />
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+
+    <!--StepProgressLayout-->
+    <declare-styleable name="StepProgressLayout">
+        <!--第一个条目的图片、大小-->
+        <attr name="step_first_image" format="reference" />
+        <attr name="step_first_image_size" format="dimension" />
+        <!--第一条Top线的高度-->
+        <attr name="step_first_line_height" format="dimension" />
+        <!--正常条目的图片、大小-->
+        <attr name="step_normal_image" format="reference" />
+        <attr name="step_normal_image_size" format="dimension" />
+        <!--正常条目Top线的高度-->
+        <attr name="step_normal_line_height" format="dimension" />
+        <!--线的大小、线的颜色-->
+        <attr name="step_line_size" format="dimension" />
+        <attr name="step_line_color" format="color|reference" />
+        <attr name="step_style" format="enum">
+            <enum name="first" value="0" />
+            <enum name="normal" value="1" />
+            <enum name="end" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <!-- PictureProgressBar -->
+    <declare-styleable name="PictureProgressBar">
+        <attr name="backGroundColor" format="color" />
+        <attr name="barColor" format="color" />
+        <attr name="drawable" format="reference" />
+        <attr name="halfDrawableWidth" format="dimension" />
+        <attr name="halfDrawableHeight" format="dimension" />
+        <attr name="drawableHeightOffset" format="dimension" />
+        <attr name="isRound" format="boolean" />
+        <attr name="roundX" format="dimension" />
+        <attr name="roundY" format="dimension" />
+        <attr name="picprogress" format="integer" />
+        <attr name="max" format="integer" />
+        <attr name="isSetBar" format="boolean" />
+        <attr name="progressHeight" format="dimension" />
+        <attr name="progressHeightOffset" format="dimension" />
+        <attr name="refreshTime" format="integer" />
+        <attr name="animMode" format="enum">
+            <enum name="ANIM_NULL" value="0" />
+            <enum name="ANIM_ROTATE" value="1" />
+            <enum name="ANIM_SCALE" value="2" />
+            <enum name="ANIM_ROTATE_SCALE" value="3" />
+            <enum name="ANIM_FRAME" value="4" />
+        </attr>
+        <attr name="rotateRate" format="integer" />
+        <attr name="rotateDegree" format="integer" />
+        <attr name="scaleMax" format="float" />
+        <attr name="scaleMin" format="float" />
+        <attr name="scaleRate" format="float" />
+        <attr name="isGradient" format="boolean" />
+        <attr name="gradientStartColor" format="color" />
+        <attr name="gradientEndColor" format="color" />
+        <attr name="backgroundDrawable" format="reference" />
+        <attr name="barDrawable" format="reference" />
+    </declare-styleable>
+
+    <!-- SwitchButton -->
+    <declare-styleable name="SwitchButton">
+        <attr name="borderWidth" format="dimension" />
+        <attr name="offBorderColor" format="reference|color" />
+        <attr name="offColor" format="reference|color" />
+        <attr name="onColor" format="reference|color" />
+        <attr name="spotColor" format="reference|color" />
+        <attr name="animate" format="reference|boolean" />
+    </declare-styleable>
+
 </resources>

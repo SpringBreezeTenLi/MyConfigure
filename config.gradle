@@ -24,11 +24,6 @@ ext {
 
     //参数配置
     manifestPlaceholders = [
-            //UMENGAppKey
-            UMAppKey         : "61c443fae014255fcbc6f4bb",
-            UMAppKeyIsCenter : "61c444b9e0f9bb492ba8a5aa",
-            UMAppName        : "华鼎云仓系统-Android",
-            UMAppNameIsCenter: "华鼎云仓网系统-Android",
             //网络地址
             //网络测试环境:http://173.16.200.99:1509/   开发环境:http://173.16.200.93:1509/   生产环境:https://wms.huadingyun.cn/api/
             serverHost       : "https://wms.huadingyun.cn/api/",
@@ -126,10 +121,6 @@ ext {
             "XPopupExt"          : 'com.github.li-xiaojun:XPopupExt:0.0.7',
             "XPopup"             : 'com.github.li-xiaojun:XPopup:2.5.3',
             "permissionx"        : 'com.permissionx.guolindev:permissionx:1.4.0',
-
-            "umsdk-common"       : 'com.umeng.umsdk:common:9.4.4',
-            "umsdk-asms"         : 'com.umeng.umsdk:asms:1.4.1',
-            "umsdk-apm"          : 'com.umeng.umsdk:apm:1.5.2',
     ]
 
 }
