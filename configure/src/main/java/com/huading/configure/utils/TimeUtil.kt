@@ -64,7 +64,7 @@ class TimeUtil {
      * 失效日期计算
      * 年月日
      */
-    fun getDateByType(releaseDate: String?, num: Int, type: Int): String? {
+    fun getFailureData(releaseDate: String?, num: Int, type: Int): String? {
         val df: DateFormat = SimpleDateFormat("yyyy-MM-dd")
         val calendar = Calendar.getInstance()
         var d: Date? = Date()
@@ -73,19 +73,15 @@ class TimeUtil {
         } catch (e: ParseException) {
             e.printStackTrace()
         }
-        var num1: Int = 0
         when (type) {
             1 -> {
-                num1 = calendar[Calendar.YEAR]
-                calendar[Calendar.YEAR] = num1 + num
+                calendar.add(Calendar.YEAR,num)
             }
             2 -> {
-                num1 = calendar[Calendar.MONTH]
-                calendar[Calendar.MONTH] = num1 + num
+                calendar.add(Calendar.MONTH,num)
             }
             3 -> {
-                num1 = calendar[Calendar.DAY_OF_YEAR]
-                calendar[Calendar.DAY_OF_YEAR] = num1 + num
+                calendar.add(Calendar.DAY_OF_YEAR,num)
             }
         }
         d = calendar.time

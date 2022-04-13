@@ -11,9 +11,7 @@ kapt {
     }
 }
 
-
 android {
-
     compileSdkVersion androidInfo.compileSdkVersion
     buildToolsVersion androidInfo.buildToolsVersion
 
@@ -29,7 +27,6 @@ android {
         multiDexEnabled true
     }
 
-
     buildTypes {
         release {
             minifyEnabled false
@@ -41,7 +38,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
 }
 
 dependencies {
@@ -56,9 +52,7 @@ dependencies {
 
     support.each { k, v -> api v }
 
-
     api 'com.alibaba:arouter-api:1.5.1'
     kapt 'com.alibaba:arouter-compiler:1.2.2'
     kapt 'androidx.lifecycle:lifecycle-compiler:2.0.0'
-
 }

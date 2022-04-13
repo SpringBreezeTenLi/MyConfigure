@@ -3,9 +3,14 @@ ext {
     //是否为组件化开发
     isModule = true
 
-    //applicationId版本号sdkVersion统一管理
-    //华鼎云仓系统（店仓） versionCode：2  versionName：1.1  applicationId：com.huading.wmstore  appName：华鼎云仓系统
-    //华鼎云网仓系统（中心仓） versionCode：12  versionName：1.2.0  applicationId：com.huading.wms  appName：华鼎云网仓系统
+    /**
+     * applicationId版本号sdkVersion统一管理
+     *
+     * versionCode：1
+     * versionName：1.0
+     * applicationId：com.huading.myconfigure
+     * appName：MyConfigure
+     */
     android = [
             compileSdkVersion: 29,
             buildToolsVersion: "29.0.3",
@@ -22,14 +27,16 @@ ext {
             keyPassword      : "123456",
     ]
 
-    //参数配置
+    /**
+     * 参数配置
+     *
+     * 网络测试环境 : http://173.16.200.99:1509/
+     * 开发环境     : http://173.16.200.93:1509/
+     * 生产环境     : https://wms.huadingyun.cn/api/
+     */
     manifestPlaceholders = [
-            //网络地址
-            //网络测试环境:http://173.16.200.99:1509/   开发环境:http://173.16.200.93:1509/   生产环境:https://wms.huadingyun.cn/api/
-            serverHost       : "https://wms.huadingyun.cn/api/",
-            serverDebugHost  : "https://wms.huadingyun.cn/api/",
-            isCenter         : true,
-
+            serverHost     : "https://wms.huadingyun.cn/api/",
+            serverDebugHost: "https://wms.huadingyun.cn/api/",
 
     ]
 

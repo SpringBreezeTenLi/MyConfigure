@@ -1,10 +1,11 @@
 package com.huading.configure.utils
 
 import android.util.Log
+import com.huading.configure.BuildConfig
 
 object LogUtil {
     val TAG: String = "LogUtil"
-    val isDebug: Boolean = com.huading.configure.BuildConfig.DEBUG
+    val isDebug: Boolean = BuildConfig.DEBUG
 
     fun d(TAG: String, s: String) {
         if (isDebug) Log.d(TAG, "-------------->$s")

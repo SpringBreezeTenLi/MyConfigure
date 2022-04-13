@@ -2,6 +2,7 @@ package com.huading.configure.base
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.huading.configure.net.http.DisposableErrorTools
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -9,9 +10,11 @@ import kotlinx.coroutines.SupervisorJob
 /**
  * ViewModel基类
  */
-open abstract class BaseViewModel : ViewModel() {
+open class BaseViewModel : ViewModel() {
 
     private val mViewModelJob = SupervisorJob()
+
+    val mDisposableErrorTools = DisposableErrorTools()
     val uiScope = CoroutineScope(Dispatchers.Main + mViewModelJob)
     val errorLive by lazy {
         MutableLiveData<String>()
